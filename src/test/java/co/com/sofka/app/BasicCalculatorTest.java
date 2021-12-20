@@ -1,6 +1,7 @@
 package co.com.sofka.app;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -9,7 +10,7 @@ class BasicCalculatorTest {
 
     private final BasicCalculator calculator = new BasicCalculator();
 
-    @Test
+    @ParameterizedTest(name = "{0} + {1} = {2}")
     @CsvSource({
             "0,    1,   1",
             "1,    2,   3",
@@ -23,7 +24,7 @@ class BasicCalculatorTest {
         assertEquals(resultSum, result, () -> first + "+" + second + " should equal to " + result);
     }
 
-    @Test
+    @ParameterizedTest(name = "{2} - {1} = {1}")
     @CsvSource({
             "6, 4, 2",
             "15, 5, 10",
@@ -36,7 +37,7 @@ class BasicCalculatorTest {
         assertEquals(resultMinus, result, () -> first +"-"+ second + " should equal to " + result);
     }
 
-    @Test
+    @ParameterizedTest(name = "{5} * {2} = {10}")
     @CsvSource({
             "4, 5, 20",
             "50, 2, 100",
@@ -49,7 +50,7 @@ class BasicCalculatorTest {
         assertEquals(resultMultiply, result, () -> first +"*"+ second + " should equal to " + result);
     }
 
-    @Test
+    @ParameterizedTest(name = "{6} / {2} = {3}")
     @CsvSource({
             "12, 4, 3",
             "15, 5, 3",
