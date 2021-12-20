@@ -16,7 +16,7 @@ class BasicCalculatorTest {
             "49,  51, 100",
             "1,  100, 101"
     })
-    private void sum(Long first, Long second, Long result){
+    void sum(Long first, Long second, Long result){
         Long resultSum = calculator.sum(first, second);
 
         //Assert
@@ -30,7 +30,7 @@ class BasicCalculatorTest {
             "200, 80, 120",
             "3, 1 , 2"
     })
-    private void minus(Long first, Long second, Long result){
+    void minus(Long first, Long second, Long result){
         Long resultMinus = calculator.minus(first, second);
 
         assertEquals(resultMinus, result, () -> first +"-"+ second + " should equal to " + result);
@@ -43,7 +43,7 @@ class BasicCalculatorTest {
             "3, 9, 27",
             "8, 4, 32"
     })
-    private void multiply(Long first, Long second, Long result){
+    void multiply(Long first, Long second, Long result){
         Long resultMultiply = calculator.multiply(first, second);
 
         assertEquals(resultMultiply, result, () -> first +"*"+ second + " should equal to " + result);
@@ -56,7 +56,7 @@ class BasicCalculatorTest {
             "70, 10, 7",
             "36, 6, 6"
     })
-    private void division(Long first, Long second, Long result){
+    void division(Long first, Long second, Long result){
         Long resultDivision = calculator.division(first, second);
 
         assertEquals(resultDivision, result, () -> first +"-"+ second + " should equal to " + result);
